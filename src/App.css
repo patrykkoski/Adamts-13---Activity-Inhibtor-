@@ -13,7 +13,7 @@ body {
   padding: 50px 10px 10px 10px;
   border-radius: 10px;
   position: relative;
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
 }
 .form-wrapper__header {
   position: absolute;
