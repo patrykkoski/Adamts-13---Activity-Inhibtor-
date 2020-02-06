@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import "./App.css";
 import RowsList from "./components/RowsList";
+import ChartComponent from "./components/ChartComponent";
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 function App() {
   const [rows, setRows] = useState([
     { c1: "", c2: "", csr: "", percentage: "" }
   ]);
 
-  //const [data, setData] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
   const addRow = e => {
-    const newRows = [
-      ...rows,
-      { c1: "", c2: "", csr: "", percentage: "" }
-    ];
+    const newRows = [...rows, { c1: "", c2: "", csr: "", percentage: "" }];
     setRows(newRows);
   };
 
@@ -44,22 +43,29 @@ function App() {
     setRows([...rows], newRow);
   };
 
+  const generateChart = () => {
+    const d = rows.map(row => {
+      return { x: row.percentage, y: row.csr };
+    });
+    setChartData(d);
+  };
+
   return (
     <div className="App">
       <div className="chart"></div>
       <div className="form-wrapper">
         <div className="form-wrapper__header">
-          <h3>Adamts13</h3>
+          <h3>ADAMTS13</h3>
         </div>
 
         <table className="main-table" border="1" frame="hsides" rules="rows">
           <thead>
             <tr>
               <th>Numer pomiaru</th>
-              <th>C1</th>
-              <th>C2</th>
-              <th>CŚr</th>
-              <th>Procent</th>
+              <th>1</th>
+              <th>2</th>
+              <th>Cśr</th>
+              <th>%</th>
               <th>Usuń pomiar</th>
             </tr>
           </thead>
@@ -75,9 +81,10 @@ function App() {
         </table>
         <div className="form-wrapper__footer">
           <button onClick={addRow}>Dodaj pomiar</button>
-          <button>Generuj wykres</button>
+          <button onClick={generateChart}>Generuj wykres</button>
         </div>
       </div>
+      <ChartComponent data={chartData} />
     </div>
   );
 }

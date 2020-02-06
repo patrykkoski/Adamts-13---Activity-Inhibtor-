@@ -4,7 +4,7 @@ import "../App.css";
 const InputsRow = props => {
   return (
     <tr className="inputRow">
-      <td>{props.index + 1}</td>
+      <td>{"C" + (props.index + 1)}</td>
       <td>
         <input
           type="text"

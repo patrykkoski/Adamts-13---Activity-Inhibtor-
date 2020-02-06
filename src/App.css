@@ -3,17 +3,18 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
 }
 .form-wrapper {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  box-shadow: 2px 2px 5px 0.1px gray;
+  box-shadow: 2px 2px 5px 0.1px rgb(75, 75, 75);
   padding: 50px 10px 10px 10px;
   border-radius: 10px;
   position: relative;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
 }
 .form-wrapper__header {
   position: absolute;
@@ -23,14 +24,10 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background-color: red;
-  background-image: linear-gradient(
-    to right,
-    rgb(103, 149, 209),
-    rgb(5, 33, 77)
-  );
+  background-image: linear-gradient(to right, #46c5fa, #3242a1);
   text-align: center;
   border-radius: 10px;
-  box-shadow: 2px 2px 5px 0.1px gray;
+  box-shadow: 2px 2px 5px 0.1px rgb(75, 75, 75);
 }
 .main-table th {
   width: 20%;
@@ -44,19 +41,66 @@ body {
 }
 .main-table input {
   padding: 5px;
-  border: 1px solid rgb(103, 149, 209);
+  border: 1px solid #3a82cc;
   border-radius: 5px;
 }
+.main-table input:disabled {
+  background: white;
+  border: 1px solid orange;
+}
 .form-wrapper button {
-  padding: 5px;
-  border: none;
-  background: rgb(224, 98, 98);
-  color: white;
-  box-shadow: 1px 1px 2px 0.1px gray;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid rgb(231, 84, 84);
+  background: transparent;
+  color: rgb(231, 84, 84);
+  box-shadow: 1px 1px 4px 0.1px rgb(83, 83, 83);
   cursor: pointer;
+  transition: 0.3s;
+}
+.form-wrapper button:hover {
+  background: rgb(231, 84, 84);
+  color: white;
+  transition: 0.3s;
 }
 .form-wrapper .form-wrapper__footer button {
-  background: rgb(103, 149, 209);
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #3a82cc;
+  background: transparent;
+  color: #3a82cc;
   margin: 10px;
-  padding: 10px;
+  transition: 0.3s;
+  width: 175px;
+}
+.form-wrapper .form-wrapper__footer button:hover {
+  background: #3a82cc;
+  color: white;
+  transition: 0.3s;
+}
+.chart-wrapper {
+  width: 80%;
+  height: 500px;
+  margin: 50px auto;
+  box-shadow: 2px 2px 5px 0.1px rgb(75, 75, 75);
+  padding: 50px 10px 10px 10px;
+  border-radius: 10px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+}
+.chart-wrapper__header {
+  position: absolute;
+  top: -30px;
+  color: white;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  background-image: linear-gradient(to right, #46c5fa, #3242a1);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 0.1px rgb(75, 75, 75);
 }
