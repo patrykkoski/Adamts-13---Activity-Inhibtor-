@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 
 const InputsRow = props => {
@@ -8,7 +8,6 @@ const InputsRow = props => {
       <td>
         <input
           type="text"
-          placeholder="c1"
           value={props.row.c1}
           onChange={e => props.handleC1Change(props.index, e.target.value)}
         ></input>
@@ -16,23 +15,16 @@ const InputsRow = props => {
       <td>
         <input
           type="text"
-          placeholder="c2"
           value={props.row.c2}
           onChange={e => props.handleC2Change(props.index, e.target.value)}
         ></input>
       </td>
       <td>
-        <input
-          type="text"
-          placeholder="cŚr"
-          disabled
-          value={props.row.csr}
-        ></input>
+        <input type="text" disabled value={props.row.csr}></input>
       </td>
       <td>
         <input
           type="text"
-          placeholder="Procent"
           value={props.row.percentage}
           onChange={e =>
             props.handlePercentageChange(props.index, e.target.value)
